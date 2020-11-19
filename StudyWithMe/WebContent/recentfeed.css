@@ -1,0 +1,101 @@
+@charset "UTF-8";
+.tiles {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  postiion: relative;
+  margin: 0 0 0 0;
+  width: 1200px;
+}
+
+  .tiles article {
+    -moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative;
+
+
+
+    margin: 40px 40px 0 0;
+  }
+
+    .tiles article > .image {
+      -moz-transition: -moz-transform 0.5s ease;
+      -webkit-transition: -webkit-transform 0.5s ease;
+      -ms-transition: -ms-transform 0.5s ease;
+      transition: transform 0.5s ease;
+      position: relative;
+      display: block;
+      width: 250px;
+      height: 250px;
+
+      overflow: hidden;
+    }
+
+      .tiles article > .image img {
+        display: block;
+        width: 250px;
+        height: 250px;
+
+      }
+      .tiles article > a {
+    				display: -moz-flex;
+    				display: -webkit-flex;
+    				display: -ms-flex;
+    				display: flex;
+    				-moz-flex-direction: column;
+    				-webkit-flex-direction: column;
+    				-ms-flex-direction: column;
+    				flex-direction: column;
+    				-moz-align-items: center;
+    				-webkit-align-items: center;
+    				-ms-align-items: center;
+    				align-items: center;
+    				-moz-justify-content: center;
+    				-webkit-justify-content: center;
+    				-ms-justify-content: center;
+    				justify-content: center;
+    				-moz-transition: background-color 0.5s ease, -moz-transform 0.5s ease;
+    				-webkit-transition: background-color 0.5s ease, -webkit-transform 0.5s ease;
+    				-ms-transition: background-color 0.5s ease, -ms-transform 0.5s ease;
+    				transition: background-color 0.5s ease, transform 0.5s ease;
+    				position: absolute;
+    				top: 0;
+    				left: 0;
+    				width: 150px;
+    				height: 150px;
+    				padding: 0;
+    				border-radius: 4px;
+    				border-bottom: 0;
+    				color: #ffffff;
+    				text-align: center;
+    				text-decoration: none;
+    				z-index: 3;
+    			}
+
+          body:not(.is-touch) .tiles article:hover > .image {
+    				-moz-transform: scale(1.05);
+    				-webkit-transform: scale(1.05);
+    				-ms-transform: scale(1.05);
+    				transform: scale(1.05);
+
+            }
+
+            @media screen and (max-width: 200px) {
+
+  .tiles {
+    margin: 0;
+  }
+
+    .tiles article {
+      width: 100%;
+      margin: 0 0 0 0;
+    }
+
+}
