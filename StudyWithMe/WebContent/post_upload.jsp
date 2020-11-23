@@ -44,7 +44,7 @@
   <div class="container">
     <h2> 게시판 글쓰기</h2>
     <hr style="border: solid 2px #1369CC" >
-    <form class="" action="post_view.jsp" method="post">
+    <form class="" action="post_upload_db.jsp" method="post">
       <table width=100% height=500px>
         <tr>
         <td><select class="" name="subject" style="width:450px">

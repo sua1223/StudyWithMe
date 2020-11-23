@@ -64,24 +64,18 @@
 	
 	System.out.println("DB 접속 성공");
 	
-	String subject=request.getParameter("subject");
-	String head=request.getParameter("head");
-	String title=request.getParameter("title");
-	String text=request.getParameter("text");
-	String notyet="---";
-	String query = "insert into board (head, subject,title, text, user, date) values ('" + head+ "','" + subject + "','" + title + "','" + text + "','" + notyet + "','" + notyet + "')";
+	String query = "select * from board where num = '" + session.getAttribute("boardId"); + "';";
 
-	stmt=conn.createStatement();
-	System.out.println("222222");
-	stmt.executeUpdate(query);
-	System.out.println("333333공");
+  stmt=conn.createStatement();
+	rs=stmt.executeQuery(query);
+  rs.next();
 %>
+
 <div class="container">
     <div id="wapper">
        <section>
-          <b>[<%=head %>] <%=title %></b>
-          <article><p><%=text %></p>
-            <img src="dog.jpg" alt="멍멍" width="300px" height="260px"/>
+          <b>[<%=rs.getString("head") %>] <%=rs.getString("title") %></b>
+          <article><p><%=rs.getString("text") %></p>
              </article>
              <form action="boardList.jsp" method="post">
              <input style="width:70px" type="submit" name="" value="목록">
