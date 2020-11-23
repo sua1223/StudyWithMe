@@ -16,13 +16,6 @@
 <title>boardList</title>
 </head>
 <body>
-	<div class = "frame">
-			<div class = "nav"> 
-				 <a href = "#">Home</a> 
-				 <a href = "#">About</a> 
-				 <a href = "#">Profile</a> 
-			</div> 
-	<div class = "header"></div>
 	<div class="container">
 	<div align="right">
 	<h1 style="text-align:center">게시판</h1><br><br>
@@ -51,13 +44,13 @@
 			String driver="com.mysql.jdbc.Driver";
 			Class.forName(driver);
 			
-			String jdbcurl="jdbc:mysql://localhost:3306/wpsampledb?serverTimezone=UTC";
+			String jdbcurl="jdbc:mysql://localhost:3306/sampledb?serverTimezone=UTC";
 				
 			conn=DriverManager.getConnection(jdbcurl,"root","0814");
 			
 			System.out.println("DB 접속 성공");
 			
-			String query="select * from boardlist";
+			String query="select * from board";
 			stmt=conn.createStatement();
 			rs=stmt.executeQuery(query);
 			
@@ -65,11 +58,11 @@
 	   	%>
 	   	<tr>
 	      <td> <%=rs.getString("num") %> </td>
-	      <td> --- </td>
+	      <td> <%=rs.getString("subject") %> </td>
 	      <td> <%= rs.getString("head") %></td>
 	      <td> <%= rs.getString("title") %></td>
-	      <td> --- </td>
-	      <td> --- </td>
+	      <td> <%= rs.getString("user") %> </td>
+	      <td> <%= rs.getString("date") %> </td>
 	   </tr>
 	   <%
 	   	}
