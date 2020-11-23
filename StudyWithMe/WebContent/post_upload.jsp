@@ -10,7 +10,10 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    
    <title>게시판 글쓰기</title>
-    <style type="text/css">
+     <style type="text/css">
+     *{
+     	font-family:sans-serif;
+     }
       h2{
         font-color:#000000;
         padding:0px 10px 0px;
@@ -20,27 +23,30 @@
       }
       tr, td {
         height:45px;
-        border: 1px solid #000000;
+        border: 1px solid #adadad;
         padding: 0px 7px 0px;
-        background-color:#B5BBE0;
+        background-color:#ffffff;
       }
       select{
         border-radius:7px;
         height:37px;
       }
       input{
-        width:860px;
+        border: 1px solid #adadad;
         height:32px;
         border-radius:7px;
         padding:0px 2px 0px;
       }
       textarea{
+        border: 1px solid #adadad;
         border-radius:7px;
         padding:7px 10px 2px;
+        margin:5px;
       }
     </style>
   </head>
   <body>
+  <iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>
   <div class="container">
     <h2> 게시판 글쓰기</h2>
     <hr style="border: solid 2px #1369CC" >

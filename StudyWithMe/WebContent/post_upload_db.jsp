@@ -33,8 +33,6 @@
 	stmt=conn.createStatement();
 	stmt.executeUpdate(query);
 
-    query = ""
-    
     query = "select num from board order by num desc;";
     rs = stmt.executeQuery(query);   
     rs.next();
