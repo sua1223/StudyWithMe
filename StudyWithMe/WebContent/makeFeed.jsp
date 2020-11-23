@@ -14,12 +14,12 @@
 			<div class="inner">
 							<section>
 								<h1>게시물 작성</h1><br>
-								<form method="post" action="madeFeed.jsp">
+								<form method="post" enctype="multipart/form-data" action="madeFeed.jsp">
 									<div class="fields">
 										<div class="field half">
 											<div id ="image_container" >
 			<span id="inputButton"> 	
-			<input type="file"  name="file" id="file" accept=".jpg,.jpeg,.png" onchange = "setImage(event);"  />
+			<input type="file"  name=file1 id="file" onchange = "setImage(event);"  />
 			</span>
 					</div>
 
@@ -27,7 +27,7 @@
 										<div class="field half">
 										</div>
 										<div class="field">
-											<textarea name="message" id="message" placeholder="TEXT"></textarea>
+											<textarea name="writer" id="message" placeholder="TEXT"></textarea>
 										</div>
 									</div>
 									<ul class="actions">
