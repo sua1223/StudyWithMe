@@ -1,18 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
 <%
    request.setCharacterEncoding("UTF-8");
 %>
 <!DOCTYPE HTML>
-<html lang="en" dir="ltr">
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   
-   <title>게시판 화면</title> 
+  <title>post2</title>
    <style type="text/css">
     *{
      	font-family:sans-serif;
@@ -45,24 +44,40 @@
   </style>
 </head>
 <body>
+<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe> 
 <%
-   String title=request.getParameter("title");
-   String main_text=request.getParameter("main_text");
-   String boards=request.getParameter("boards");
-   String head=request.getParameter("head");
+	Connection conn =null;
+	Statement stmt= null;
+	ResultSet rs= null;
+	
+	try{
+	String driver="com.mysql.jdbc.Driver";
+	Class.forName(driver);
+	
+	String jdbcurl="jdbc:mysql://localhost:3306/sampledb?serverTimezone=UTC";
+		
+	conn=DriverManager.getConnection(jdbcurl,"root","0814");
+	
+	System.out.println("DB 접속 성공");
+	
+	String query = "select * from board where num = '" + session.getAttribute("boardId") + "';";
+
+	stmt=conn.createStatement();
+	rs=stmt.executeQuery(query);
+	rs.next();
 %>
-<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>        
+
 <div class="container">
 <table width=100% height="90%">
 	<tr>
-		<td><h2 align="center"><%=boards %></h2></td>
+		<td><h2 align="center"><%=rs.getString("subject") %></h2></td>
 	</tr>
 	<tr>
-		<td><h4>[<%=head %>] <%=title %></h4></td>
+		<td><h4>[<%=rs.getString("head") %>] <%=rs.getString("title") %></h4></td>
 	</tr>
 	<tr>
 		<td>
-		<article style="white-space:pre;"><%=main_text %></article>
+		<article style="white-space:pre;"><%=rs.getString("text") %></article>
 		
         </td>
     </tr>
@@ -75,6 +90,17 @@
         </td>
     </tr>
 </table>
-</div>
+   </div>
+   <%
+	   	
+		}catch(ClassNotFoundException e){
+			System.out.println("JDBC 드라이버 로드 에러");
+			e.printStackTrace();
+		}catch(SQLException sqle){
+			System.out.println("SQL 실행 에러");
+		}
+	   	stmt.close();
+	   	conn.close();
+	 %>
 </body>
 </html>
