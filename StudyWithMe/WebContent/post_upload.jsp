@@ -10,7 +10,7 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    
    <title>게시판 글쓰기</title>
-     <style type="text/css">
+    <style type="text/css">
      *{
      	font-family:sans-serif;
      }
@@ -20,6 +20,7 @@
       }
       table{
         padding: 10px 0px 30px;
+        margin-bottom:200px;
       }
       tr, td {
         height:45px;
@@ -49,11 +50,11 @@
   <iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>
   <div class="container">
     <h2> 게시판 글쓰기</h2>
-    <hr style="border: solid 2px #1369CC" >
-    <form class="" action="post_upload_db.jsp" method="post">
+    <hr style="border: solid 1px #adadad" >
+    <form class="" action="post_view.jsp" method="post">
       <table width=100% height=500px>
         <tr>
-        <td><select class="" name="subject" style="width:450px">
+        <td><select class="" name="boards" style="width:640px">
             <option value="">과목을 선택해주세요.</option>
             <option value="시스템 소프트 웨어">시스템 소프트 웨어</option>
             <option value="웹 프로그래밍">웹 프로그래밍</option>
@@ -75,7 +76,7 @@
         </tr>
         <tr>
             <td colspan="2">
-            <textarea name="text" rows="18" cols="170" placeholder="내용을 입력하세요."></textarea>
+            <textarea name="main_text" rows="25" cols="170" placeholder="내용을 입력하세요."></textarea>
             </td>
         </tr>
         <tr>
