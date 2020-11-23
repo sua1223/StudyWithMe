@@ -16,6 +16,7 @@
 <title>boardList</title>
 </head>
 <body>
+<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>       
 	<div class = "frame">
 			<div class = "nav"> 
 				 <a href = "#">Home</a> 
