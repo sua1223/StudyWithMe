@@ -124,10 +124,38 @@ body {
 }
 </style>
 <title>sign up page</title>
+ <script type="text/javascript">
+    
+        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+        function checkValue()
+        {
+            if(!document.userInfo.id.value){
+                alert("아이디를 입력하세요.");
+                return false;
+            }
+            
+            if(!document.userInfo.pw.value){
+                alert("비밀번호를 입력하세요.");
+                return false;
+            }
+            
+            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+            if(document.userInfo.pw.value != document.userInfo.pwCheck.value ){
+                alert("비밀번호를 동일하게 입력하세요.");
+                return false;
+            }
+        }
+        
+        // 취소 버튼 클릭시 로그인 화면으로 이동
+        function goLoginForm() {
+            location.href="loginForm.jsp";
+        }
+    </script>
+
 </head>
  <body width="100%" height="100%" bgcolor="#2B4166">
  
-    <form action="<%= request.getContextPath() %>/joinForm_db.jsp" method="post" class="signUpForm" name="userInfo">
+    <form action="<%= request.getContextPath() %>/joinForm_db.jsp" method="post" class="signUpForm" name="userInfo" onsubmit="return checkValue()" >
       <h2>Sign up to Study With Me</h2>
       <div class="letterForm">
         <input type="text" class="id" name="id" placeholder="ID">
@@ -147,7 +175,8 @@ body {
       <div class="letterForm">
       	<input type="password" class="pwCheck" name ="pwCheck" placeholder="Confirm Password">
       </div>
-      <input type="submit" class="btn" />
+      <input type="submit" value ="가입" class="btn" />
+      <input type = "button" value = "취소" onclick ="goLoginForm()">
     </form>
     </body>
     </html>

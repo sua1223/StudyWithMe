@@ -13,9 +13,7 @@
     String user_School = request.getParameter("school");
     String user_Major = request.getParameter("major");
     String user_Pw = request.getParameter("pw");
-   	String user_regDate = "1000-01-01 00:00:00";
    	
-   	System.out.println(user_ID + " " + user_Email + " " + user_School + " " + user_Major);
 
    	try {
    	Class.forName("com.mysql.jdbc.Driver");
@@ -25,8 +23,8 @@
    	
 	try{
 	
-		String jdbcurl="jdbc:mysql://localhost:3306/boarddb?serverTimezone=UTC";
-		String query = "insert into member (ID, Email, School, Major, pwd, regDate) values ('" + user_ID + "','" + user_Email + "','" + user_School + "','" + user_Major + "','" + user_Pw + "','" + user_regDate + "')";
+		String jdbcurl="jdbc:mysql://localhost:3306/sampledb?serverTimezone=UTC";
+		String query = "insert into user_info (id, pw, e_mail, school, major) values ('" + user_ID + "','" + user_Pw + "','" + user_Email + "','" + user_School + "','" + user_Major  + "')";
 		
 		conn = DriverManager.getConnection(jdbcurl,"root","0814");
 		stmt = conn.createStatement();
@@ -38,3 +36,4 @@
 		if (conn != null) try { conn.close();} catch(SQLException ex) {}
 	}
    %>
+   
