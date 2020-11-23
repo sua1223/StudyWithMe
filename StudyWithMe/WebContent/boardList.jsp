@@ -54,12 +54,13 @@
 			rs=stmt.executeQuery(query);
 			
 	   	while(rs.next()){
+			session.setAttribute("boardId",rs.getString("num"));
 	%>
 	   	<tr>
 	      <td> <%=rs.getString("num") %> </td>
 	      <td> <%=rs.getString("subject") %> </td>
 	      <td> <%= rs.getString("head") %></td>
-	      <td> <a href = "post_view.jsp"><%= rs.getString("title") %> </a></td>
+	      <td id = > <a href = "post_view.jsp"><%= rs.getString("title") %> </a></td>
 	      <td> <%= rs.getString("user") %> </td>
 	      <td> <%= rs.getString("date") %> </td>
 	   </tr>
