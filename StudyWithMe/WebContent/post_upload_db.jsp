@@ -30,17 +30,18 @@
 	String text=request.getParameter("text");
 	String notyet="---";
 	String query = "insert into board (head, subject,title, text, user, date) values ('" + head+ "','" + subject + "','" + title + "','" + text + "','" + notyet + "','" + notyet + "')";
-
 	stmt=conn.createStatement();
 	stmt.executeUpdate(query);
+
+    query = ""
     
-    query = "select num from board;";
+    query = "select num from board order by num desc;";
     rs = stmt.executeQuery(query);   
     rs.next();
     session.setAttribute("boardId", rs.getString("num"));    
     
     response.sendRedirect("post_view.jsp");
-    
+
     }catch(ClassNotFoundException e){
         System.out.println("JDBC 드라이버 로드 에러");
         e.printStackTrace();
