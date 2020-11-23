@@ -49,6 +49,7 @@
 	Connection conn =null;
 	Statement stmt= null;
 	ResultSet rs= null;
+    String value;
 	
 	try{
 	String driver="com.mysql.jdbc.Driver";
@@ -59,6 +60,9 @@
 	conn=DriverManager.getConnection(jdbcurl,"root","0814");
 	
 	System.out.println("DB 접속 성공");
+
+    if(getAttribute(boardId) == "0")
+        session.setAttribute("boardId", value);
 	
 	String query = "select * from board where num = '" + session.getAttribute("boardId") + "';";
 

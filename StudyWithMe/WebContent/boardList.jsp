@@ -52,15 +52,16 @@
 			String query="select * from board order by num desc";
 			stmt=conn.createStatement();
 			rs=stmt.executeQuery(query);
+
+			session.setAttribute("boardId", "0");  
 			
 	   	while(rs.next()){
-			session.setAttribute("boardId",rs.getString("num"));
 	%>
 	   	<tr>
 	      <td> <%=rs.getString("num") %> </td>
 	      <td> <%=rs.getString("subject") %> </td>
 	      <td> <%= rs.getString("head") %></td>
-	      <td id = > <a href = "post_view.jsp"><%= rs.getString("title") %> </a></td>
+	      <td> <a href = "post_view.jsp?value = <%= rs.getString("num")%>" <%= rs.getString("title") %> </a></td>
 	      <td> <%= rs.getString("user") %> </td>
 	      <td> <%= rs.getString("date") %> </td>
 	   </tr>
