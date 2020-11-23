@@ -15,32 +15,37 @@
 <title>boardList</title>
 </head>
 <body>
-<div class="container">
-<div align="right">
-<h1 style="text-align:center">웹프로그래밍</h1><br><br>
-<input type='text' name='word' style="width:100px; letter-spacing: -5px; vertical-align:right">
-<button type='submit'>검색</button>  
-<br><br>
-</div>
-<table class="table table-hover">
-   <thead>
-   <tr>
-      <th> 번호 </th>
-      <th> 말머리 </th>
-      <th> 제목 </th>
-      <th> 작성자 </th>
-      <th> 날짜 </th>
-   </tr>
-   </thead>
-   <tbody>
-   <%
-	Connection conn =null;
-	Statement stmt= null;
-	ResultSet rs= null;
-	
-	try{
-		String driver="com.mysql.jdbc.Driver";
-		Class.forName(driver);
+<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>       
+	<div class = "frame">
+			<div class = "nav"> 
+				 <a href = "#">Home</a> 
+				 <a href = "#">About</a> 
+				 <a href = "#">Profile</a> 
+			</div> 
+	<div class = "header"></div>
+	<div class="container">
+	<div align="right">
+	<h1 style="text-align:center">게시판</h1><br><br>
+	<input type='text' name='word' style="width:100px; letter-spacing: -5px; vertical-align:right">
+	<button type='submit'>검색</button>  
+	<br><br>
+	</div>
+	<table class="table table-hover">
+	   <thead>
+	   <tr>
+	      <th> 번호 </th>
+	      <th> 과목 </th>
+	      <th> 말머리 </th>
+	      <th> 제목 </th>
+	      <th> 작성자 </th>
+	      <th> 날짜 </th>
+	   </tr>
+	   </thead>
+	   <tbody>
+	   <%
+		Connection conn =null;
+		Statement stmt= null;
+		ResultSet rs= null;
 		
 		String jdbcurl="jdbc:mysql://localhost:3306/wpsampledb?serverTimezone=UTC";
 			
