@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <style>
 *{
   margin: 0px;
@@ -76,6 +77,7 @@ body {
   background: #406AE6;
   background-position: left;
   background-size: 200%;
+  border-radius:7px;
   color:white;
   font-weight: bold;
   border:none;
