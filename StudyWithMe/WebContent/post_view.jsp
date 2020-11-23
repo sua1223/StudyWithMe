@@ -46,12 +46,16 @@
 <body>
 <iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe> 
 <%
+	int value=0;
+
 	Connection conn =null;
 	Statement stmt= null;
 	ResultSet rs= null;
-    String value;
-	
+	value=Integer.parseInt(request.getParameter("value"));
+    
 	try{
+		
+	System.out.println("value="+value);
 	String driver="com.mysql.jdbc.Driver";
 	Class.forName(driver);
 	
@@ -60,11 +64,8 @@
 	conn=DriverManager.getConnection(jdbcurl,"root","0814");
 	
 	System.out.println("DB 접속 성공");
-
-    if(getAttribute(boardId) == "0")
-        session.setAttribute("boardId", value);
 	
-	String query = "select * from board where num = '" + session.getAttribute("boardId") + "';";
+	String query = "select * from board where num = '" +value + "';";
 
 	stmt=conn.createStatement();
 	rs=stmt.executeQuery(query);

@@ -9,14 +9,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "profilePageLayout.css">
 <title>boardList</title>
 </head>
 <body>
 	<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe> 
-
 	<div class="container">
 	<div align="right">
 	<h1 style="text-align:center">게시판</h1><br><br>
@@ -41,7 +41,9 @@
 		Statement stmt= null;
 		ResultSet rs= null;
 		
-		String jdbcurl="jdbc:mysql://localhost:3306/wpsampledb?serverTimezone=UTC";
+		try{
+			String driver="com.mysql.jdbc.Driver";
+			Class.forName(driver);
 			
 			String jdbcurl="jdbc:mysql://localhost:3306/sampledb?serverTimezone=UTC";
 				
@@ -52,16 +54,15 @@
 			String query="select * from board order by num desc";
 			stmt=conn.createStatement();
 			rs=stmt.executeQuery(query);
-
-			session.setAttribute("boardId", "0");  
 			
+			session.setAttribute("boardId","0");
 	   	while(rs.next()){
 	%>
 	   	<tr>
 	      <td> <%=rs.getString("num") %> </td>
 	      <td> <%=rs.getString("subject") %> </td>
 	      <td> <%= rs.getString("head") %></td>
-	      <td> <a href = "post_view.jsp?value = <%= rs.getString("num")%>" <%= rs.getString("title") %> </a></td>
+	      <td> <a href = "post_view.jsp?value=<%=rs.getString("num") %>"> <%= rs.getString("title") %> </a></td>
 	      <td> <%= rs.getString("user") %> </td>
 	      <td> <%= rs.getString("date") %> </td>
 	   </tr>

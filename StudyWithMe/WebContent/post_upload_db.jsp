@@ -36,10 +36,10 @@
     query = "select num from board order by num desc;";
     rs = stmt.executeQuery(query);   
     rs.next();
-    session.setAttribute("boardId", rs.getString("num"));    
     
-    response.sendRedirect("post_view.jsp");
-
+    String redirect_url="post_view.jsp?value=" +rs.getString("num");
+    response.sendRedirect(redirect_url);
+   
     }catch(ClassNotFoundException e){
         System.out.println("JDBC 드라이버 로드 에러");
         e.printStackTrace();
