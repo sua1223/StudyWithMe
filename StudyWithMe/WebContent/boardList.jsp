@@ -24,18 +24,18 @@
 	<br><br>
 	</div>
 	<table class="table table-hover">
-	   <thead>
-	   <tr>
-	      <th> 번호 </th>
-	      <th> 과목 </th>
-	      <th> 말머리 </th>
-	      <th> 제목 </th>
-	      <th> 작성자 </th>
-	      <th> 날짜 </th>
-	   </tr>
-	   </thead>
-	   <tbody>
-	   <%
+	   	<thead>
+	   	<tr>
+	    <th style="width: 5%"> 번호 </th>
+        <th style="width: 15%"> 과목 </th>
+        <th style="width: 10%"> 말머리 </th>
+        <th style="width: 40%"> 제목 </th>
+        <th style="width: 20%"> 작성자 </th>
+        <th style="width: 10%"> 날짜 </th>
+	   	</tr>
+	   	</thead>
+	   	<tbody>
+	<%
 		Connection conn =null;
 		Statement stmt= null;
 		ResultSet rs= null;
@@ -50,21 +50,21 @@
 			
 			System.out.println("DB 접속 성공");
 			
-			String query="select * from board";
+			String query="select * from board order by num desc";
 			stmt=conn.createStatement();
 			rs=stmt.executeQuery(query);
 			
 	   	while(rs.next()){
-	   	%>
+	%>
 	   	<tr>
 	      <td> <%=rs.getString("num") %> </td>
 	      <td> <%=rs.getString("subject") %> </td>
 	      <td> <%= rs.getString("head") %></td>
-	      <td> <%= rs.getString("title") %></td>
+	      <td> <a href = "post_view.jsp"><%= rs.getString("title") %> </a></td>
 	      <td> <%= rs.getString("user") %> </td>
 	      <td> <%= rs.getString("date") %> </td>
 	   </tr>
-	   <%
+	<%
 	   	}
 		}catch(ClassNotFoundException e){
 			System.out.println("JDBC 드라이버 로드 에러");
@@ -74,7 +74,7 @@
 		}
 	   	stmt.close();
 	   	conn.close();
-	   %>
+	%>
 		</tbody>
 	</table>
 	<hr/>
