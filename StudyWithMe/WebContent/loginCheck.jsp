@@ -16,9 +16,9 @@
 	try{
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql:"
-				+ "//localhost:3306/userinfo?serverTimezone=UTC", "root","gpffps369");
+				+ "//localhost:3306/member?serverTimezone=UTC", "root","0814");
 		
-		String sql = "SELECT * FROM USERINFO WHERE ID=?";
+		String sql = "SELECT * FROM member WHERE ID=?";
 		stmt = conn.prepareStatement(sql);
 		stmt.setString(1, id);
 		rs = stmt.executeQuery();
