@@ -5,17 +5,6 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.io.*" %>
 
-<script>
-function pw_error() {
-	alert('pw error!!');
-}
-	
-function Id_error() {
-	alert('오류발생1!!');
-}
-	
-	</script>
-	PrintWriter out = request.getWriter();
 	
 <%
 
@@ -58,13 +47,23 @@ function Id_error() {
 	            }
 	            
 	            else                  
-	            {
-	       			response.sendRedirect("loginForm.jsp");	    	       			
+	            {%> 
+	            	<script>
+	            	alert("Password invalid")
+	            	window.location.replace("loginForm.jsp");
+	            	</script>
+	            	<%
+	       			//response.sendRedirect("loginForm.jsp");	    	       			
 	            }
 	        }
 			else
-			{
-				response.sendRedirect("loginForm.jsp");
+			{%>
+				<script>
+				alert("ID invalid")
+            	window.location.replace("loginForm.jsp");
+				</script>
+				<%
+				//response.sendRedirect("loginForm.jsp");
 			}
 		
 	} catch(SQLException e) {
