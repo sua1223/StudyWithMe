@@ -23,7 +23,6 @@
 	<form action = "boardList_searched.jsp" method = "post">
 		<select class="" name="category" style="width:450px">
             <option value="">검색 카테고리</option>
-            <option value="num">번호</option>
             <option value="subject">과목</option>
             <option value="head">말머리</option>
 			<option value="title">제목</option>
