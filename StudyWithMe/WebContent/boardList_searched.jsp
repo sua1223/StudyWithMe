@@ -61,11 +61,11 @@
 			
 			System.out.println("DB 접속 성공");
 			
-			String query="select * from board order by num desc";
-			stmt=conn.createStatement();
+			String query="select * from board where " + request.getParameter("category") + " like '%" + request.getParameter("word") + "%' order by num desc";
+            stmt=conn.createStatement();
 			rs=stmt.executeQuery(query);
 			
-			session.setAttribute("boardId", "0");
+			session.setAttribute("boardId","0");
 	   	while(rs.next()){
 	%>
 	   	<tr>
