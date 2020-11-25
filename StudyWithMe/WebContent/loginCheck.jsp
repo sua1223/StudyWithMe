@@ -43,7 +43,7 @@
 	            if (dbPW.equals(pw)) 
 	            {
 	            	session.setAttribute("sessionID" , id);
-	            	response.sendRedirect("profilePageLayout.html");
+	            	response.sendRedirect("profilePageLayout.jsp");
 	            }
 	            
 	            else                  
