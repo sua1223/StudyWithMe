@@ -65,10 +65,12 @@
 			rs=stmt.executeQuery(query);
 			
 			session.setAttribute("boardId","0");
-	   	while(rs.next()){
+	   	    
+               int i = 1;
+	   		while(rs.next()){
 	%>
 	   	<tr>
-	      <td> <%=rs.getString("num") %> </td>
+	      <td> <%=i%> </td>
 	      <td> <%=rs.getString("subject") %> </td>
 	      <td> <%= rs.getString("head") %></td>
 	      <td> <a href = "post_view.jsp?value=<%=rs.getString("num") %>"> <%= rs.getString("title") %> </a></td>
@@ -76,6 +78,7 @@
 	      <td> <%= rs.getString("date") %> </td>
 	   </tr>
 	<%
+			i++;
 	   	}
 		}catch(ClassNotFoundException e){
 			System.out.println("JDBC 드라이버 로드 에러");
