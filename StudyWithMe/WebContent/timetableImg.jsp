@@ -25,10 +25,18 @@
  
 	String fullpath =  "images\\" + filename1;
 %> 
-<title>Insert title here</title> 
+<title>시간표 사진</title> 
+<style>
+ img{
+ 	float: left;
+    clear: both;
+ 	border: 3px solid #adadad; 
+ 	border-radius: 7px; 
+ 	overflow: hidden;
+ }
+</style>
 </head> 
-<body> 
-<img src="<%=fullpath%>" width=250 height=400></img> 
-<br>시간표
+<body>
+	<img src="<%=fullpath%>" width=270px height=400px></img> <br>
 </body> 
 </html> 

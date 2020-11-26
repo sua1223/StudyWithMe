@@ -114,7 +114,7 @@ body {
         SIGN IN
       </button>
       <div class="bottomText">
-        Don't you have ID? <a href="signUp.jsp">sign up</a>
+        Don't you have ID? <a href="joinForm.jsp">sign up</a>
       </div>
     </form>
     <%

@@ -7,23 +7,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<link rel = "stylesheet" type = "text/css" href = "profilePageLayout.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>boardList</title>
 </head>
 <body>
 <iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>       
-	<div class = "frame">
-			<div class = "nav"> 
-				 <a href = "#">Home</a> 
-				 <a href = "#">About</a> 
-				 <a href = "#">Profile</a> 
-			</div> 
-	<div class = "header"></div>
 	<div class="container">
 	<div align="right">
 	<h1 style="text-align:center">게시판</h1><br><br>
@@ -43,18 +36,59 @@
 	   </tr>
 	   </thead>
 	   <tbody>
-	   <%
+	 <%--   <%
 		Connection conn =null;
 		Statement stmt= null;
 		ResultSet rs= null;
 		
-		try{
-			String driver="com.mysql.jdbc.Driver";
-			Class.forName(driver);
+		String jdbcurl="jdbc:mysql://localhost:3306/wpsampledb?serverTimezone=UTC";
 			
+<<<<<<< Updated upstream
+		conn=DriverManager.getConnection(jdbcurl,"root","0814");
+		
+		System.out.println("DB 접속 성공");
+		
+		String query="select * from boardlist";
+		stmt=conn.createStatement();
+		rs=stmt.executeQuery(query);
+		
+   	while(rs.next()){
+   	%>
+   	<tr>
+      <td> <%=rs.getString("num") %> </td>
+
+      <td> --- </td>
+      <td> --- </td>
+   </tr>
+   <%
+   	}
+	}catch(ClassNotFoundException e){
+		System.out.println("JDBC 드라이버 로드 에러");
+		e.printStackTrace();
+	}catch(SQLException sqle){
+		System.out.println("SQL 실행 에러");
+	}
+   	stmt.close();
+   	conn.close();
+   %>
+	</tbody>
+</table>
+<hr/>
+<a class="btn btn-default pull-right">글쓰기</a>
+   <div class="text-center">
+      <ul class="pagination">
+         <li><a href="#">1</a></li>
+         <li><a href="#">2</a></li>
+         <li><a href="#">3</a></li>
+         <li><a href="#">4</a></li>
+         <li><a href="#">5</a></li>
+      </ul>
+   </div>
+</div>
+=======
 			String jdbcurl="jdbc:mysql://localhost:3306/wpsampledb?serverTimezone=UTC";
 				
-			conn=DriverManager.getConnection(jdbcurl,"root","0814");
+			conn=DriverManager.getConnection(jdbcurl,"root","gpffps369");
 			
 			System.out.println("DB 접속 성공");
 			
@@ -82,7 +116,7 @@
 		}
 	   	stmt.close();
 	   	conn.close();
-	   %>
+	   %> --%>
 		</tbody>
 	</table>
 	<hr/>
@@ -98,5 +132,6 @@
 			</div>
 		</div>
 	</div>
+<center><iframe src="footer.jsp" width = "1200px" height = "200px" scrolling = "no" frameborder ="0"></iframe></center>
 </body>
 </html>

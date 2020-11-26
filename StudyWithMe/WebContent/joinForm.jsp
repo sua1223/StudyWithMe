@@ -177,6 +177,12 @@ body {
       <div class="letterForm">
       	<input type="password" class="pwCheck" name ="pwCheck" placeholder="Confirm Password">
       </div>
+<<<<<<< Updated upstream
+=======
+      <button type="submit" class="btn" >
+        SIGN UP
+      </button>
+>>>>>>> Stashed changes
 
       <input type="submit" value ="가입" class="btn" />
       <input type = "button" value = "취소" onclick ="goLoginForm()">

@@ -22,7 +22,7 @@
         margin-bottom:200px;
     }
     tr, td {
-        height:45px;
+        height:55px;
         border: 1px solid #adadad;
         padding: 0px 7px 0px;
         background-color:#ffffff;
@@ -34,8 +34,9 @@
       width: 97%;
       height:500px;
       margin:8px;
-      padding:0px 5px 1px;
+      padding:5px 3px 3px 5px;
       background-color: #ffffff;
+      white-space:pre;
     }
     input{
         border: 1px solid #adadad;
@@ -54,21 +55,19 @@
 %>
 <iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>        
 <div class="container">
-<table width=100% height="90%">
+	<h1 align="center"><%=boards %></h1>
+	<hr width="1200px"style="border: solid 1px #adadad" >
+	<table width=1200px height="500px">
 	<tr>
-		<td><h2 align="center"><%=boards %></h2></td>
-	</tr>
-	<tr>
-		<td><h4>[<%=head %>] <%=title %></h4></td>
+		<td><h3>[<%=head %>] <%=title %></h3></td>
 	</tr>
 	<tr>
 		<td>
-		<article style="white-space:pre;"><%=main_text %></article>
-		
+		<article><%=main_text %></article>
         </td>
     </tr>
     <tr>
-    	<td align=center>
+    	<td align="center">
     	<form action="boardList.jsp" method="post">
              <input style="width:70px" type="submit" name="" value="목록">
              <input style="width:70px" type="submit" name="" value="삭제">
@@ -76,6 +75,7 @@
         </td>
     </tr>
 </table>
+<iframe src="footer.jsp" width = "1200px" height = "200px" scrolling = "no" frameborder ="0"></iframe>
 </div>
 </body>
 </html>
