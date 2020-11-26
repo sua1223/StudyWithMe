@@ -9,6 +9,7 @@
 .squares { grid-area: squares; }
 
 .graph {
+	
 	position : absolute;
 	display: inline-grid;
 	grid-template-areas: "empty months"
@@ -68,9 +69,10 @@ body {
 }
 
 .graph {
-  padding: 30px;
+  /*padding: 30px;*/
   border: 1px #e1e4e8;
   margin: 10px;
+  position: absolute;
 }
 
 /* 요일 반 안보이기

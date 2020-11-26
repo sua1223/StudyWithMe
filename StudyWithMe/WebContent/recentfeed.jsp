@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="recentFeed.css" />
+<link rel="stylesheet" href="recentfeed.css" />
 
 <title>Insert title here</title>
 </head>
