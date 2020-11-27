@@ -30,8 +30,18 @@ e.printStackTrace();
  
 String fullpath = "images\\" + filename1; 
 %> 
+<title>프로필 사진</title>
+<style>
+ img{ 
+	float: left;
+    clear: both;
+    border: 4px solid #adadad; 
+ 	border-radius: 30%; 
+ 	overflow: hidden;
+ }
+</style>
 </head> 
 <body> 
-<img src="<%=fullpath%>" width=200 height=200></img> 
+	<img src="<%=fullpath%>" width=200px height=200px></img> 
 </body> 
 </html>

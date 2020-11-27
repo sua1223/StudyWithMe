@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
- <head>
+ <head><!-- bootstrap 양쪽여백을 위해 씀 -->
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
         margin-bottom:200px;
       }
       tr, td {
-        height:45px;
+        height:55px;
         border: 1px solid #adadad;
         padding: 0px 7px 0px;
         background-color:#ffffff;
@@ -46,13 +46,15 @@
       }
     </style>
   </head>
+  
+  
   <body>
   <iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>
   <div class="container">
-    <h2> 게시판 글쓰기</h2>
-    <hr style="border: solid 1px #adadad" >
+    <h1 align="center"> 게시판 글쓰기</h1>
+    <hr width="1200px"style="border: solid 1px #adadad" >
     <form class="" action="post_view.jsp" method="post">
-      <table width=100% height=500px>
+      <table width=1200px height=500px>
         <tr>
         <td><select class="" name="boards" style="width:640px">
             <option value="">과목을 선택해주세요.</option>
@@ -71,7 +73,7 @@
         </tr>
         <tr>
           <td colspan="2">
-           <input style="width:1100px"type="text" name="title" value="" placeholder="제목을 입력해주세요."/>
+           <input style="width:1150px"type="text" name="title" value="" placeholder="제목을 입력해주세요."/>
           </td>
         </tr>
         <tr>
@@ -86,6 +88,7 @@
         </tr>
       </table>
     </form>
+    <iframe src="footer.jsp" width = "1200px" height = "200px" scrolling = "no" frameborder ="0"></iframe>
     </div>
   </body>
 </html>
