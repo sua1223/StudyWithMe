@@ -49,7 +49,8 @@
 	Connection conn =null;
 	Statement stmt= null;
 	ResultSet rs= null;
-	
+	int value = Integer.parseInt(request.getParameter("value"));
+    
 	try{
 	String driver="com.mysql.jdbc.Driver";
 	Class.forName(driver);
@@ -60,7 +61,7 @@
 	
 	System.out.println("DB 접속 성공");
 	
-	String query = "select * from board where num = '" + session.getAttribute("boardId") + "';";
+	String query = "select * from board where num = '" + value + "';";
 
 	stmt=conn.createStatement();
 	rs=stmt.executeQuery(query);
@@ -82,11 +83,9 @@
         </td>
     </tr>
     <tr>
-    	<td align=center>
-    	<form action="boardList.jsp" method="post">
-             <input style="width:70px" type="submit" name="" value="목록">
-             <input style="width:70px" type="submit" name="" value="삭제">
-        </form>
+    	<td>
+        <a class="btn btn-default pull-left" href= "boardList.jsp?value=1">목록</a>
+        <a class="btn btn-default pull-left" href = "post_delete.jsp?value=<%=rs.getString("num") %>">삭제</a>
         </td>
     </tr>
 </table>

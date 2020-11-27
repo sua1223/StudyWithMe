@@ -36,10 +36,10 @@
 	<table class="table table-hover">
 	   	<thead>
 	   	<tr>
-	    <th style="width: 10%"> 번호 </th>
+	    <th style="width: 5%"> 번호 </th>
         <th style="width: 15%"> 과목 </th>
         <th style="width: 10%"> 말머리 </th>
-        <th style="width: 35%"> 제목 </th>
+        <th style="width: 40%"> 제목 </th>
         <th style="width: 20%"> 작성자 </th>
         <th style="width: 10%"> 날짜 </th>
 	   	</tr>
@@ -49,7 +49,6 @@
 		Connection conn =null;
 		Statement stmt= null;
 		ResultSet rs= null;
-		int value = Integer.parseInt(request.getParameter("value"));
 		
 		try{
 			String driver="com.mysql.jdbc.Driver";
@@ -61,16 +60,14 @@
 			
 			System.out.println("DB 접속 성공");
 			
-			String query="select * from board order by num desc";
-			stmt=conn.createStatement();
+			String query="select * from board where " + request.getParameter("category") + " like '%" + request.getParameter("word") + "%' order by num desc";
+            stmt=conn.createStatement();
 			rs=stmt.executeQuery(query);
-
-			int i = 1;
-			while(i <= (value - 1) * 10) {
-				i++;
-				rs.next();
-			}
-	   		while(rs.next() && i <= value * 10){	
+			
+			session.setAttribute("boardId","0");
+	   	    
+               int i = 1;
+	   		while(rs.next()){
 	%>
 	   	<tr>
 	      <td> <%=i%> </td>
@@ -98,8 +95,11 @@
 		<a class="btn btn-default pull-right" href="post_upload.jsp">글쓰기</a>
 			<div class="text-center">
 			   <ul class="pagination">
-			      <li><a href="boardList.jsp?value=<%= value -= 1 %>"> 이전 </a></li>
-			      <li><a href="boardList.jsp?value=<%= value += 2 %>"> 다음 </a></li>
+			      <li><a href="#">1</a></li>
+			      <li><a href="#">2</a></li>
+			      <li><a href="#">3</a></li>
+			      <li><a href="#">4</a></li>
+			      <li><a href="#">5</a></li>
 			   </ul>
 			</div>
 		</div>

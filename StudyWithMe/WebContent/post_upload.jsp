@@ -60,7 +60,7 @@
             <option value="심화 프로그래밍">심화 프로그래밍</option>
           </select>
         </td>
-        <td><select class="" name="head" style="width:400px">
+        <td><select class="" name="head" style="width:200px">
             <option value="기타">말머리</option>
             <option value="질문">질문</option>
             <option value="팀플">팀플</option>
@@ -70,7 +70,7 @@
         </tr>
         <tr>
           <td colspan="2">
-           <input style="width:1100px"type="text" name="title" value="" placeholder="제목을 입력해주세요."/>
+           <input type="text" name="title" value="" placeholder="제목을 입력해주세요."/>
           </td>
         </tr>
         <tr>
