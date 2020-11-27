@@ -1,11 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko"> 
 <head> 
-<style>
-	img{ float: left;
-        clear: both;
-	}
-</style>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%> 
 <%@ page import="com.oreilly.servlet.MultipartRequest,com.oreilly.servlet.multipart.DefaultFileRenamePolicy,java.util.*,java.io.*" %> 
 <%@ page import="java.sql.*" %> 
@@ -35,13 +30,13 @@ String fullpath = "images\\" + filename1;
  img{ 
 	float: left;
     clear: both;
-    border: 4px solid #adadad; 
+    border: 1px solid #adadad; 
  	border-radius: 30%; 
  	overflow: hidden;
  }
 </style>
 </head> 
 <body> 
-	<img src="<%=fullpath%>" width=200px height=200px></img> 
+	<img src="<%=fullpath%>" width=210px height=210px></img> 
 </body> 
 </html>

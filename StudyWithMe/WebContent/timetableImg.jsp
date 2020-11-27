@@ -30,13 +30,13 @@
  img{
  	float: left;
     clear: both;
- 	border: 3px solid #adadad; 
+ 	border: 1px solid #adadad; 
  	border-radius: 7px; 
  	overflow: hidden;
  }
 </style>
 </head> 
 <body>
-	<img src="<%=fullpath%>" width=270px height=400px></img> <br>
+	<img src="<%=fullpath%>" width=280px height=440px></img> <br>
 </body> 
 </html> 
