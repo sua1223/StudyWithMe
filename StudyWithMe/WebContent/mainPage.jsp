@@ -4,11 +4,20 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel = "stylesheet" type = "text/css" href = "profilePageLayout.css">
+<<<<<<< HEAD
 </head> 
+=======
+<<<<<<< HEAD
+>>>>>>> d7c520572f1e39110068281b8d0447fa4c3d2f90
    <title>main page</title>
 </head> 
     
 <body>
+=======
+</head> 
+    
+<body">
+>>>>>>> CSS
 	<div class="frame" style="width:0px; margin:auto; position:relative;">
      <iframe src="headerAndNavi.html" width="1700px" height="900px" scrolling = "no" frameborder ="0" style="position:relative; left:50%; margin-left:-850px; border-style:none;"></iframe>
   	 <div class = "row" style="position:relative; left:50%; margin-left:-600px;"> 
