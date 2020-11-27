@@ -25,16 +25,15 @@
 	
 	System.out.println("DB 접속 성공");
 	
-	String subject=request.getParameter("subject");
-	String head=request.getParameter("head");
-	String title=request.getParameter("title");
-	String text=request.getParameter("text");
-	String notyet="---";
-	String query = "delete from board where num = '" + value + "'";
+	String query = "select * from board where num = '" + value + "'";
 	stmt=conn.createStatement();
+	rs = stmt.executeQuery(query);
+	rs.next();
+
+	query = "delete from board where num = '" + value + "'";
 	stmt.executeUpdate(query);
     
-    response.sendRedirect("boardList.jsp");
+    response.sendRedirect("boardList.jsp?value=1");
    
     }catch(ClassNotFoundException e){
         System.out.println("JDBC 드라이버 로드 에러");
@@ -45,6 +44,5 @@
     stmt.close();
     conn.close();
     %>
-}
 </body>
 </html>
