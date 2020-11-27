@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>로그아웃 처리</title>
-</head>
-<body>
-	<%
-		session.invalidate();
-		response.sendRedirect("loginForm.jsp");
-	%>
-</body>
-</html>
+
+
+<% session.invalidate(); %>
+	
+<script>
+	alert("Logout 되었습니다.");
+	window.location.replace("loginForm.jsp");
+</script>
+
+<!-- response.sendRedirect("loginForm.jsp");	--> 	
