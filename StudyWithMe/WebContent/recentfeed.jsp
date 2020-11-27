@@ -1,21 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "java.sql.* " %>
-<%
-   request.setCharacterEncoding("UTF-8");
-%>
+<%@ page import = "java.sql.*" %>
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
 <head>
+   <style type="text/css">
+   a{text-decoration:none}
+   .feedButton { width:60px; height:30px;}
+   .feedButton div.btn_wrap { position:relative; float:right; width:60px; height:30px;  }
+   .feedButton div.btn_wrap span { position:absolute; left:100px; top:10px; display:block; width:60px; height:30px; line-height:30px; background:#333; font-size:11px; color:#fff; text-align:center; border:0; border-radius:3px; -webkit-border-radius:3px; cursor:pointer; }
+
+</style>
 <meta charset="UTF-8">
 	<link rel = "stylesheet" type = "text/css" href = "recentfeed.css">
 
 <title>Insert title here</title>
 </head>
-<body class="is-preload">
-                        
-                        			   <%
-	   
+<body>
+      <div class="feedButton">
+   <div class="btn_wrap">
+      <span>
+         <a href="makeFeed.jsp" style="color:white">UPLOAD</a>
+         <a href="makeFeed.jsp" style="color:white">UPLOAD</a>
+					
+				</span>
+		  </div>
+		</div>                     
+   <%
 		Connection conn =null;
 		Statement stmt= null;
 		ResultSet rs= null;
@@ -26,7 +38,7 @@
 			
 			String jdbcurl="jdbc:mysql://localhost:3306/sampledb?serverTimezone=UTC";
 				
-			conn=DriverManager.getConnection(jdbcurl,"root","knight337");
+			conn=DriverManager.getConnection(jdbcurl,"root","0814");
 			
 			System.out.println("DB 접속 성공");
 			
@@ -52,8 +64,8 @@
            </span>
                    
     
-                     <a href="feed_view.jsp?num=<%=rs.getString("num")%>"></a>
-                  </article>
+         <a href="feed_view.jsp?num=<%=rs.getString("num")%>"></a>
+      </article>
 
      <%
 	   	}
@@ -66,56 +78,6 @@
 	   	stmt.close();
 	   	conn.close();
 	   %>
-
-    <!--               <article class="style2">
-                     <span class="image">
-                        <img src="pic02.jpg" alt="" />
-                     </span>
-                     <a href="generic.jsp"></a>
-                  </article>
-                  <article class="style3">
-                     <span class="image">
-                        <img src="pic03.jpg" alt="" />
-                     </span>
-                     <a href="generic.jsp"></a>
-                  </article>
-                  <br>
-
-                  <article class="style4">
-                     <span class="image">
-                        <img src="pic04.jpg" alt="" />
-                     </span>
-                     <a href="generic.jsp"></a>
-                  </article>
-                  <article class="style5">
-                     <span class="image">
-                        <img src="pic05.jpg" alt="" />
-                     </span>
-                     <a href="generic.jsp"></a>
-                  </article>
-                  <article class="style6">
-                     <span class="image">
-                        <img src="pic06.jpg" alt="" />
-                     </span>
-                     <a href="generic.jsp"></a>
-                  </article>
-                  
-                  
-                  <article class="style7">
-                     <span class="image">
-                        <img src="pic07.jpg" alt="" />
-                     </span>
-                     <a href="generic.jsp"></a>
-                  </article>
-                  
-                  <article class="style8">
-                     <span class="image">
-                        <img src="pic08.jpg" alt="" />
-                     </span>
-                     <a href="generic.jsp"></a> -->
-                     
-<!--                   </article>
- -->                  
                </section>
             </div>
          </div>
