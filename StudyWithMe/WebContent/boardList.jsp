@@ -16,12 +16,13 @@
 <title>boardList</title>
 </head>
 <body>
-	<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe> 
 	<div class="container">
+		<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0" style="margin-left:-280px"></iframe> 
 	<div align="right">
-	<h1 style="text-align:center">게시판</h1><br><br>
-	<form action = "boardList_searched.jsp" method = "post">
-		<select class="" name="category" style="width:450px">
+	<h1 style="text-align:center"><b>게시판</b></h1>
+	<hr width="1110px" style="border:solid 1px #adadad">
+	<form action = "boardList_searched.jsp?value=1" method = "post">
+		<select class="" name="category" style="width:200px; height:25px" >
             <option value="">검색 카테고리</option>
             <option value="subject">과목</option>
             <option value="head">말머리</option>

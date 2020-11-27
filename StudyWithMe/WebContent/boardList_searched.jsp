@@ -16,12 +16,14 @@
 <title>boardList</title>
 </head>
 <body>
-	<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe> 
 	<div class="container">
+	<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0" style="margin-left:-280px"></iframe> 
 	<div align="right">
-	<h1 style="text-align:center">게시판</h1><br><br>
+	<h1 style="text-align:center"><b>게시판</b></h1>
+	<hr width="1130px" style="border:solid 1px #adadad">
+	<div align="right">
 	<form action = "boardList_searched.jsp" method = "post">
-		<select class="" name="category" style="width:450px">
+		<select class="" name="category" style="width:200px; height:25px">
             <option value="">검색 카테고리</option>
             <option value="subject">과목</option>
             <option value="head">말머리</option>
@@ -49,6 +51,7 @@
 		Connection conn =null;
 		Statement stmt= null;
 		ResultSet rs= null;
+		int value = Integer.parseInt(request.getParameter("value"));
 		
 		try{
 			String driver="com.mysql.jdbc.Driver";
@@ -63,11 +66,13 @@
 			String query="select * from board where " + request.getParameter("category") + " like '%" + request.getParameter("word") + "%' order by num desc";
             stmt=conn.createStatement();
 			rs=stmt.executeQuery(query);
-			
-			session.setAttribute("boardId","0");
-	   	    
-               int i = 1;
-	   		while(rs.next()){
+			 
+            int i = 1;
+            while(i <= (value - 1) * 10) {
+				i++;
+				rs.next();
+			}
+	   		while(rs.next()&& i <= value * 10){
 	%>
 	   	<tr>
 	      <td> <%=i%> </td>
@@ -95,11 +100,8 @@
 		<a class="btn btn-default pull-right" href="post_upload.jsp">글쓰기</a>
 			<div class="text-center">
 			   <ul class="pagination">
-			      <li><a href="#">1</a></li>
-			      <li><a href="#">2</a></li>
-			      <li><a href="#">3</a></li>
-			      <li><a href="#">4</a></li>
-			      <li><a href="#">5</a></li>
+			      <li><a href="boardList.jsp?value=<%= value -= 1 %>"> 이전 </a></li>
+			      <li><a href="boardList.jsp?value=<%= value += 2 %>"> 다음 </a></li>
 			   </ul>
 			</div>
 		</div>
