@@ -84,7 +84,7 @@
     </tr>
     <tr>
     	<td>
-        <a class="btn btn-default pull-left" href= "boardList.jsp">목록</a>
+        <a class="btn btn-default pull-left" href= "boardList.jsp?value=1">목록</a>
         <a class="btn btn-default pull-left" href = "post_delete.jsp?value=<%=rs.getString("num") %>">삭제</a>
         </td>
     </tr>
