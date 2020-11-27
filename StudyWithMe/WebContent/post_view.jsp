@@ -76,27 +76,60 @@
     			</ul>
     		</nav>
 <%
-	String title=request.getParameter("title");
-	String main_text=request.getParameter("main_text");
-	String boards=request.getParameter("boards");
-	String head=request.getParameter("head");
+	Connection conn =null;
+	Statement stmt= null;
+	ResultSet rs= null;
+	int value = Integer.parseInt(request.getParameter("value"));
+    
+	try{
+	String driver="com.mysql.jdbc.Driver";
+	Class.forName(driver);
+	
+	String jdbcurl="jdbc:mysql://localhost:3306/sampledb?serverTimezone=UTC";
+		
+	conn=DriverManager.getConnection(jdbcurl,"root","0814");
+	
+	System.out.println("DB 접속 성공");
+	
+	String query = "select * from board where num = '" + value + "';";
+
+	stmt=conn.createStatement();
+	rs=stmt.executeQuery(query);
+	rs.next();
 %>
-    	<section>
-    		<h2 align="center"><%=boards %></h2>
-    		<form action="boardList.jsp" method="post">
-    		<input style="width:70px" type="submit" name="" value="목록">
-    		</form><br>
-    		<b>[<%=head %>] <%=title %></b>
-    		<article><p><%=main_text %></p>
-            <img src="dog.jpg" alt="멍멍" width="300px" height="260px"/>
-            	<form>
-              <hr style="border:dashed 2px #79ADF5">
-              <textarea style="border-radius:7px" name = "col"  rows = "2"  cols = 90% ></textarea><br>
-                <input style="border-radius:7px" type = "submit"  value = "답글">
-                </form>
-          	</article>
-    	</section>
-    	<footer>footer</footer>
-    </div>
+
+<div class="container">
+<table width=100% height="90%">
+	<tr>
+		<td><h2 align="center"><%=rs.getString("subject") %></h2></td>
+	</tr>
+	<tr>
+		<td><h4>[<%=rs.getString("head") %>] <%=rs.getString("title") %></h4></td>
+	</tr>
+	<tr>
+		<td>
+		<article style="white-space:pre;"><%=rs.getString("text") %></article>
+		
+        </td>
+    </tr>
+    <tr>
+    	<td>
+        <a class="btn btn-default pull-left" href= "boardList.jsp?value=1">목록</a>
+        <a class="btn btn-default pull-left" href = "post_delete.jsp?value=<%=rs.getString("num") %>">삭제</a>
+        </td>
+    </tr>
+</table>
+   </div>
+   <%
+	   	
+		}catch(ClassNotFoundException e){
+			System.out.println("JDBC 드라이버 로드 에러");
+			e.printStackTrace();
+		}catch(SQLException sqle){
+			System.out.println("SQL 실행 에러");
+		}
+	   	stmt.close();
+	   	conn.close();
+	 %>
 </body>
 </html>

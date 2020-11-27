@@ -13,6 +13,7 @@
 	Connection conn =null;
 	Statement stmt= null;
 	ResultSet rs= null;
+    int value = Integer.parseInt(request.getParameter("value"));
 	
 	try{
 	String driver="com.mysql.jdbc.Driver";
@@ -24,21 +25,15 @@
 	
 	System.out.println("DB 접속 성공");
 	
-	String subject=request.getParameter("subject");
-	String head=request.getParameter("head");
-	String title=request.getParameter("title");
-	String text=request.getParameter("text");
-	String notyet="---";
-	String query = "insert into board (head, subject,title, text, user, date) values ('" + head+ "','" + subject + "','" + title + "','" + text + "','" + notyet + "','" + notyet + "')";
+	String query = "select * from board where num = '" + value + "'";
 	stmt=conn.createStatement();
-	stmt.executeUpdate(query);
+	rs = stmt.executeQuery(query);
+	rs.next();
 
-    query = "select num from board order by num desc;";
-    rs = stmt.executeQuery(query);   
-    rs.next();
+	query = "delete from board where num = '" + value + "'";
+	stmt.executeUpdate(query);
     
-    String redirect_url="post_view.jsp?value=" +rs.getString("num");
-    response.sendRedirect(redirect_url);
+    response.sendRedirect("boardList.jsp?value=1");
    
     }catch(ClassNotFoundException e){
         System.out.println("JDBC 드라이버 로드 에러");
@@ -48,6 +43,6 @@
     }
     stmt.close();
     conn.close();
-	%>
+    %>
 </body>
 </html>
