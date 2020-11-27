@@ -40,5 +40,11 @@ try {
 </head> 
 <body> 
 <img src="<%= session_fullpath %>" width=200 height=200></img> 
+<form method="post" enctype="multipart/form-data" action="profileImg.jsp"> 
+	<center>
+	<input type="file" name="filename1" size=20><br>
+	<input type="submit" value = "프로필수정">
+	</center>
+</form> 
 </body> 
 </html>

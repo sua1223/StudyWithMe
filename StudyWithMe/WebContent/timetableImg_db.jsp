@@ -39,6 +39,11 @@ try {
 <head>
 </head> 
 <body> 
-<img src="<%= session_fullpath %>" width=200 height=200></img> 
+<img src="<%= session_fullpath %>" width=200 height=200></img>
+<form method="post" enctype="multipart/form-data" action="timetableImg.jsp"> 
+			<input type="file" name="filename1" size=20> 
+			<br>
+			<input type="submit" value = "시간표수정"><br><br> 
+</form> 
 </body> 
 </html>
