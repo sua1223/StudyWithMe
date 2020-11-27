@@ -35,5 +35,9 @@
 		if (stmt != null) try { stmt.close();} catch(SQLException ex) {}
 		if (conn != null) try { conn.close();} catch(SQLException ex) {}
 	}
+	
+	response.sendRedirect("loginForm.jsp");
    %>
+   
+   
    
