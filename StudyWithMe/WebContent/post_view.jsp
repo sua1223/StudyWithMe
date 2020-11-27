@@ -52,9 +52,9 @@
    String main_text=request.getParameter("main_text");
    String boards=request.getParameter("boards");
    String head=request.getParameter("head");
-%>
-<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>        
+%>       
 <div class="container">
+<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0" style="margin-left:-280px;"></iframe> 
 	<h1 align="center"><%=boards %></h1>
 	<hr width="1200px"style="border: solid 1px #adadad" >
 	<table width=1200px height="500px">
@@ -75,7 +75,7 @@
         </td>
     </tr>
 </table>
-<iframe src="footer.jsp" width = "1200px" height = "200px" scrolling = "no" frameborder ="0"></iframe>
+<iframe src="footer.jsp" width = "1200px" height = "200px" scrolling = "no" frameborder ="0" style="bottom:-30px;"></iframe>
 </div>
 </body>
 </html>

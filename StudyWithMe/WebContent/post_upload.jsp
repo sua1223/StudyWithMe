@@ -2,14 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
- <head><!-- bootstrap 양쪽여백을 위해 씀 -->
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   
-   <title>게시판 글쓰기</title>
+   <title><center>게시판 글쓰기</center></title>
     <style type="text/css">
      *{
      	font-family:sans-serif;
@@ -46,14 +41,13 @@
       }
     </style>
   </head>
-  
-  
   <body>
-  <iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>
-  <div class="container">
-    <h1 align="center"> 게시판 글쓰기</h1>
-    <hr width="1200px"style="border: solid 1px #adadad" >
-    <form class="" action="post_view.jsp" method="post">
+  <div class="frame" style="width:0px; margin:auto; position:relative;">
+  <iframe src="headerAndNavi.html" width="1700px" height="900px" scrolling = "no" frameborder ="0" style="position:relative; left:50%; margin-left:-850px; border-style:none;"></iframe>
+    <div class="frame" style="position:relative; left:50%; margin-left:-600px; border-radius:7px;">
+    <h1>게시판 글쓰기</h1>
+    <hr width="1200px" style="position:relative; left:50%; margin-left:-300px;">
+    <form action="post_view.jsp" method="post" style="">
       <table width=1200px height=500px>
         <tr>
         <td><select class="" name="boards" style="width:640px">
@@ -88,7 +82,8 @@
         </tr>
       </table>
     </form>
-    <iframe src="footer.jsp" width = "1200px" height = "200px" scrolling = "no" frameborder ="0"></iframe>
+    <iframe src="footer.jsp" width = "1200px" height = "200px" scrolling = "no" frameborder ="0" style="position:relative; clear:both; bottom:200px;"></iframe>
+     </div>
     </div>
   </body>
 </html>

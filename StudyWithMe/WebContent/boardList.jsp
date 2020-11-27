@@ -15,9 +15,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>boardList</title>
 </head>
-<body>
-<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe>       
+<body>     
 	<div class="container">
+	<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0" style="margin-left:-280px;"></iframe> 
 	<div align="right">
 	<h1 style="text-align:center">게시판</h1><br><br>
 	<input type='text' name='word' style="width:100px; letter-spacing: -5px; vertical-align:right">
