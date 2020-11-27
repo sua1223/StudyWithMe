@@ -1,79 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%request.setCharacterEncoding("UTF-8");%>
+<%
+   request.setCharacterEncoding("UTF-8");
+%>
 <!DOCTYPE HTML>
-<html lang="en" dir="ltr">
 <head>
-	<meta charset="utf-8">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>post2</title>
-	<style type="text/css">
-		body {
-      text-align: center;
-		  color: #000000;
-		  width: 1200px;
+   <style type="text/css">
+    *{
+     	font-family:sans-serif;
     }
-		div#wapper {
-      width: 100%;
-			min-height: 300px;
-			text-align: left;
-			margin: 0 auto;
+    table{
+        padding: 10px 0px 30px;
     }
-		header, footer, nav, section {
-      border-radius:10px;
-      border: 1px solid #000000;
-			margin: 5px;
-			padding: 10px;
-    }
-		header {
-      height: 50px;
-      background-color: #85ACD8;
-    }
-		nav, section {
-      float: left;
-      height: 500px;
-    }
-		nav {
-      background-color: #85ACD8;
-      width: 150px;
-    }
-		section {
-      background-color: #E2EEFE;
-      width: 1010px;
-    }
-    footer {
-      height: 50px;
-    	background-color: #85ACD8;
-    	position: relative;
-    	clear: both;
+    tr, td {
+        height:45px;
+        border: 1px solid #adadad;
+        padding: 0px 7px 0px;
+        background-color:#ffffff;
     }
     article {
-      border-radius:10px;
+      white-space:pre;
+      border-radius:7px;
       position:relative;
       width: 97%;
-      height:90%;
-    	margin:4px;
+      height:1200px;
+      margin:8px;
       padding:0px 5px 1px;
-    	background-color: #C2D3EA;
+      background-color: #ffffff;
     }
-    form{
-      position:absolute;
-      bottom:10px;
+    input{
+        border: 1px solid #adadad;
+        height:32px;
+        border-radius:7px;
+        padding:0px 2px 0px;
     }
   </style>
 </head>
 <body>
-    <div id="wapper">
-    		<header><p>header</p></header>
-    		<nav>
-    			<b>자주가는 게시판</b>
-          <hr style="border:solid 1px #000000">
-    			<ul>
-    				<li><a href="">시스템소프트웨어</a></li>
-    				<li><a href="">웹 프로그래밍</a></li>
-    				<li><a href="">심화 프로그래밍</a></li>
-    			</ul>
-    		</nav>
+<iframe src="headerAndNavi.html" width = "1700px" height = "1000px" scrolling = "no" frameborder ="0"></iframe> 
 <%
 	Connection conn =null;
 	Statement stmt= null;
