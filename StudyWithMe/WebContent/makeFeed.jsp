@@ -12,36 +12,36 @@
 			<div id="wrapper">
 			<footer id="footer">
 			<div class="inner">
-							<section>
-								<h1>게시물 작성</h1><br>
-								<form method="post" enctype="multipart/form-data" action="madeFeed.jsp">
-									<div class="fields">
-										<div class="field half">
-											<div id ="image_container" >
-			<span id="inputButton"> 	
-			<input type="file"  name=file1 id="file" onchange = "setImage(event);"  />
-			</span>
-					</div>
+			<section>
+				<h1>게시물 작성</h1><br>
+				<form method="post" enctype="multipart/form-data" action="makeFeed_db.jsp">
+					<div class="fields">
+						<div class="field half">
+							<div id ="image_container" >
+						<span id="inputButton"> 	
+						<input type="file"  name="file" id="file" onchange = "setImage(event);"  />
+						</span>
+							</div>
 
-										</div>
-										<div class="field half">
-										</div>
-										<div class="field">
-											<textarea name="writer" id="message" placeholder="TEXT"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="upload" id="upload" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
 						</div>
-					</footer>
+						<div class="field half">
+						</div>
+						<div class="field">
+							<textarea name="message" id="message" placeholder="TEXT"></textarea>
+							<!-- <input type="text" name="message" placeholder="text" /> -->
+						</div>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="upload" id="upload" class="primary" /></li>
+					</ul>
+				</form>
+			</section>
 			</div>
+			</footer>
+		</div>
 
 		<!-- Scripts -->
 		<script>
-		var imgCheck = 0;
 		
 		document.getElementById("upload").style.visibility = "hidden";
 
@@ -63,7 +63,6 @@
 
 				inputButton.setAttribute("background-color", "transparent");
 			document.getElementById("upload").style.visibility = "visible";
-				imgCheck=1;
 				}
 	
 		
