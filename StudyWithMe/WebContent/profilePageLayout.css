@@ -5,6 +5,12 @@
 body {
 margin: 0;
 }
+
+.frame{
+	margin: 0 auto; 
+	height: 1700px;
+	width: 1700px;   	
+}
 .nav { 
 	overflow: hidden; 
 	background-color: #7D9CDB; 
