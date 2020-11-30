@@ -20,12 +20,13 @@
 		<div class="inner" align="center">
 		
 			   <%
-	   int value=0;
+	   	int value=0;
 			   
 		Connection conn =null;
 		Statement stmt= null;
 		ResultSet rs= null;
 		value=Integer.parseInt(request.getParameter("num"));
+		
 		try{
 			String driver="com.mysql.jdbc.Driver";
 			Class.forName(driver);
@@ -42,13 +43,11 @@
 			
 			rs.next();
 	   		   	%>
-	   	<span class="image main"><img src=" <%= rs.getString("pic") %>	" alt="" /></span>
-				   	
+	   	<span class="image main"><img src=" <%= rs.getString("pic") %>	" alt="" /></span>  	
 		<h3 align="center"><%=rs.getString("text")%> </h3>
+		<b><a href="recentfeed.jsp"  id="feed" class="primary" >MY FEED</a></b> &nbsp;&nbsp;&nbsp;
+		<b><a href ="feed_delete.jsp?value=<%= rs.getInt("num") %>" >삭제</a></b>
 		
-		<ul class="action">
-			<li><a href="recentfeed.jsp"  id="feed" class="primary" />MY FEED  </li>
-		</ul>
 	   	
 	   <%
 	 
