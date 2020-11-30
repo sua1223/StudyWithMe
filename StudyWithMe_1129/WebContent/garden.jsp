@@ -42,12 +42,18 @@ public static int[] makeGarden(ResultSet rs){
 				int day = Integer.parseInt( Dates.substring(2, 4));
 				System.out.println("month : "+month+ ", day :" + day);
 				int start_index = map.get(month);
-				days[start_index+day] = 1;
+				days[start_index + day] = days[start_index + day] + 1;
 	        }
 			
 		} catch(Exception e) { e.printStackTrace(); }
 		
-
+		for (int i = 0 ; i < 365 ; i++)
+		{
+			if(days[i] > 4)
+				days[i] = 4;
+		}
+		
+		System.out.println("day" + days[1]);
 		return (days);
 	}
  %>
@@ -55,7 +61,7 @@ public static int[] makeGarden(ResultSet rs){
 <html>
 <head>
 	<meta charset = "utf-8">
-	<link rel = "stylesheet" type = "text/css" href = "garden.css">
+	<link rel = "stylesheet" type = "text/css" href = "garden.css?ver=1.1">
 </head>
 
 <body>
@@ -105,7 +111,7 @@ try {
    		
    		String jdbcurl= "jdbc:mysql://localhost:3306/sampledb?serverTimezone=UTC";
    		conn = DriverManager.getConnection(jdbcurl , "root","0814");
-   		String query= "SELECT distinct DATE_FORMAT(upload_date, '%m%d') AS substr_upload_date from feed where id = ? ";
+   		String query= "SELECT DATE_FORMAT(upload_date, '%m%d') AS substr_upload_date from feed where id = ? ";
    		//stmt = conn.createStatement();
    		PreparedStatement ps = conn.prepareStatement(query);
    		ps.setString(1, (String)session.getAttribute("sessionID"));
@@ -118,6 +124,8 @@ try {
 	   	for(int i = 0 ; i < 364 ; i++)
 	   	{
 			out.println("squares.insertAdjacentHTML('beforeend', `<li data-level="+ array[i] + "></li>`);");
+			if(array[i] > 0)
+				System.out.println(i + "=" + array[i]);
 	   	}
    	
    	} catch (SQLException e) {
@@ -127,11 +135,10 @@ try {
 	</ul>
 	<div class = "LessMore">
         <ul class = "legend">
-			SoSo
             <li style="background-color: #ebedf0"></li>
-			<li></li>
-            Excellent
-            <li style="background-color: #196127"></li>
+            <li style="background-color: #B8BCFF"></li>
+            <li style="background-color: #8F93C7"></li>
+            <li style="background-color: #72759E"></li>
          </ul>
 	</div>
 </div>

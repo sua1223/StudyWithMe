@@ -48,13 +48,13 @@
 }
 
 .LessMore {
+	margin-right : 23px;
 	position: absolute;
 	right: 10px;
 	bottom: 0;
 }
 
 .legend li{
-	
 	display : inline-grid;
 	padding : 5px;
 	list-style: none;
@@ -86,6 +86,15 @@ body {
 
 /* 꽃밭 색 */
 
-.squares li[data-level="1"] {
-  background-color: #196127;
+.squares li[data-level= "1"] {
+  background-color: #B8BCFF;
+}
+.squares li[data-level= "2"] {
+  background-color: #8F93C7;
+}
+.squares li[data-level = "3"] {
+  background-color: #8F93C7;
+}
+.squares li[data-level = "4" ] {
+  background-color: #72759E;
 }
