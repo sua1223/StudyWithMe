@@ -48,11 +48,11 @@ public class UserDTO {
 	}
 	
 	//shool
-	public String getShool() {
+	public String getSchool() {
 		return shool;
 	}
 	
-	public void setShool(String shool) {
+	public void setSchool(String shool) {
 		this.shool = shool;
 	}
 	
