@@ -77,7 +77,7 @@
 	<hr width="1200px" style="border:solid 1px #adadad">
 	<table width=1200px height=500px>
 	<tr>
-		<td><h3><b>[<%=rs.getString("head") %>] <%=rs.getString("title") %></b></h3></td>
+		<td><h3><b>[<%=rs.getString("head") %>] <%=rs.getString("title") %></b>	</h3></td>
 	</tr>
 	<tr>
 		<td>
@@ -86,8 +86,11 @@
     </tr>
     <tr>
     	<td align="center">
-        <a class="btn btn-default" href= "boardList.jsp?value=1">목록</a>
+        
+       	<a class="btn btn-default" href = "post_modify.jsp?value=<%=rs.getString("num") %>">수정</a>
         <a class="btn btn-default" href = "post_delete.jsp?value=<%=rs.getString("num") %>">삭제</a>
+        <a class="btn btn-default pull-right" href= "boardList.jsp?value=1">목록</a>
+       
         </td>
     </tr>
 </table>
