@@ -22,7 +22,6 @@
 						<input type="file"  name="file" id="file" onchange = "setImage(event);"  />
 						</span>
 							</div>
-
 						</div>
 						<div class="field half">
 						</div>

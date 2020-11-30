@@ -9,8 +9,15 @@
    a{text-decoration:none}
    .feedButton { width:60px; height:30px;}
    .feedButton div.btn_wrap { position:relative; float:right; width:60px; height:30px;  }
-   .feedButton div.btn_wrap span { position:absolute; left:100px; top:10px; display:block; width:60px; height:30px; line-height:30px; background:#333; font-size:11px; color:#fff; text-align:center; border:0; border-radius:3px; -webkit-border-radius:3px; cursor:pointer; }
-
+   .feedButton div.btn_wrap span { margin-left: 170px; margin-top:-8px;position:absolute; left:100px; top:10px; display:block; width:60px; height:30px; line-height:30px; background:#333; font-size:11px; color:#fff; text-align:center; border:0; border-radius:3px;}
+ 
+  	::-webkit-scrollbar{width: 16px;}
+	::-webkit-scrollbar-track {background-color:#ffffff;}
+	::-webkit-scrollbar-thumb {background-color:#ffffff;border-radius: 10px;}
+	::-webkit-scrollbar-thumb:hover {background: #ffffff;}
+	::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
+	width:16px;height:16px;background:#ffffff;}
+}
 </style>
 <meta charset="UTF-8">
 	<link rel = "stylesheet" type = "text/css" href = "recentfeed.css">
@@ -18,13 +25,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<br><br>
       <div class="feedButton">
-   <div class="btn_wrap">
+   		<div class="btn_wrap">
+		<div style="width:300px">
+   		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5px"><b>My Recent Feed</b></font>
+   		 </div>
       <span>
-         <a href="makeFeed.jsp" style="color:white">UPLOAD</a>
-         <a href="makeFeed.jsp" style="color:white">UPLOAD</a>
-					
-				</span>
+         <a href="makeFeed.jsp" style="color:white">UPLOAD</a>		
+	</span>
 		  </div>
 		</div>                     
    <%
@@ -58,15 +67,16 @@
 		   	while(rs.next()){
 		   	%>
 		   	
+		   	<div >
            <article class="style<%=n%>">
            <span class="image">
            <img src= <%= rs.getString("pic") %> alt="" />
            </span>
-                   
+                  </article> 
     
-         <a href="feed_view.jsp?num=<%=rs.getString("num")%>"></a>
-      </article>
-
+       	  <a href="feed_view.jsp?num=<%=rs.getString("num")%>"></a>
+     	
+	</div>
      <%
 	   	}
 		}catch(ClassNotFoundException e){
@@ -82,6 +92,5 @@
             </div>
          </div>
          </div>
-      </form>
   </body>
 </html>

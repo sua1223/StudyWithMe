@@ -157,7 +157,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #f2849e !important;
+			color: #3462C7 !important;
 		}
 
 	strong, b {
@@ -206,7 +206,7 @@ input, select, textarea {
 		line-height: 1.5;
 		margin: 0 0 2em 0;
 		text-transform: uppercase;
-		letter-spacing: 0.35em;
+		white-space:pre;
 	}
 
 		h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2176,8 +2176,8 @@ input, select, textarea {
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-bottom-color: #f2849e;
-			box-shadow: inset 0 -1px 0 0 #f2849e;
+			border-bottom-color: #3462C7;
+			box-shadow: inset 0 -1px 0 0 #3462C7;
 		}
 
 	select {
@@ -2282,7 +2282,7 @@ input, select, textarea {
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
 			border-color: #f2849e;
-			box-shadow: 0 0 0 1px #f2849e;
+			box-shadow: 0 0 0 1px #3462C7;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2325,8 +2325,8 @@ input, select, textarea {
 
 		.image img {
 			border-radius: 4px;
-			width : 300px;
-			height : 300px;
+			width : 500px;
+			height : 500px;
 			display: block;
 		}
 
@@ -2354,10 +2354,12 @@ input, select, textarea {
 			display: block;
 			margin: 0 0 2em 0;
 			width: 100%;
+			height:100%;
 		}
 
 			.image.fit img {
 				width: 100%;
+				height:100%;
 			}
 
 		.image.main {
@@ -2505,8 +2507,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			color: #f2849e !important;
-			box-shadow: inset 0 0 0 2px #f2849e;
+			color: #3462C7 !important;
+			box-shadow: inset 0 0 0 2px #3462C7;
 		}
 
 		input[type="submit"]:active,
@@ -2514,7 +2516,7 @@ input, select, textarea {
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: rgba(242, 132, 158, 0.1);
+			background-color: #3462C7;
 		}
 
 		input[type="submit"].small,
@@ -2548,7 +2550,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #f2849e;
+				background-color: #3462C7;
 			}
 
 			input[type="submit"].primary:active,
@@ -2556,7 +2558,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #ee5f81;
+				background-color: #3462C7;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,

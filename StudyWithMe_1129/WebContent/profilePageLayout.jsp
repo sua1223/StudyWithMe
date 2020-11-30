@@ -45,6 +45,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel = "stylesheet" type = "text/css" href = "profilePageLayout.css?ver=1.1">
+   <style>
+   </style>
 </head> 
     
 <body>
@@ -61,8 +63,7 @@
          </div>  
          <iframe src="calendar.html" width="840px" height="500px" scrolling = "no" frameborder ="0"></iframe>    
          <iframe src="timetableUpload.jsp" width="340px" height="500px" scrolling = "no" frameborder ="0"></iframe>      
-          <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Recent Feed</h2> 
-         <iframe src="recentfeed.jsp" width = "1200px" height = "800px"; scrolling = "no" frameborder ="0" style="position:relative; margin-left:30px;"></iframe>                
+         <iframe src="recentfeed.jsp" width = "1200px" height = "800px" frameborder ="0" scrollbars="0"; style="position:relative; margin-left:30px;" ></iframe>                
    </div>
    <iframe src="footer.jsp" width="1200px" height="200px" scrolling = "no" frameborder="0" style="position:relative; clear:both; bottom:-1700px;"></iframe>
    </div>
