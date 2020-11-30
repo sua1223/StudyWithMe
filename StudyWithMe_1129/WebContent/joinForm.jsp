@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -106,6 +107,7 @@ body {
   height:40px;
   background: #406AE6;
   background-position: left;
+  border-radius:7px;
   background-size: 200%;
   color:white;
   font-weight: bold;
@@ -115,7 +117,7 @@ body {
   display:inline;
 }
 
-.btn:hover {
+.btn:hover {d
   background-position: right;
 }
 
@@ -175,6 +177,7 @@ body {
       <div class="letterForm">
       	<input type="password" class="pwCheck" name ="pwCheck" placeholder="Confirm Password">
       </div>
+
       <input type="submit" value ="가입" class="btn" />
       <input type = "button" value = "취소" onclick ="goLoginForm()">
     </form>

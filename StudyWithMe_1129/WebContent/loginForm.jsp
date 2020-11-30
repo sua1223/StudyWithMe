@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <style>
 *{
   margin: 0px;
@@ -76,6 +77,7 @@ body {
   background: #406AE6;
   background-position: left;
   background-size: 200%;
+  border-radius:7px;
   color:white;
   font-weight: bold;
   border:none;
@@ -112,8 +114,23 @@ body {
         SIGN IN
       </button>
       <div class="bottomText">
-        Don't you have ID? <a href="joinForm.jsp"> sign up </a>
+        Don't you have ID? <a href="signUp.jsp">sign up</a>
       </div>
     </form>
+    <%
+    	//아이디, 비밀번호가 틀릴 경우 화면에 메시지 표시
+   		//loginPro.jsp에서 로그인 처리 결과에 따른 메세지를 보낸다.
+   		String msg = request.getParameter("msg");
+    %>
+    <script>
+   		if(msg!=null && msg.equals("0")){
+   			alert("Incorrect id!");
+   			history.go(-1);
+   		}
+    	else if(msg!=null && msg.equals("-1")){
+    		alert("Incorrect password!");
+   			history.go(-1);
+    	}
+   	</script>
   </body>
 </html>
