@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<% response.setHeader("P3P","CP='CAO PSA CONi OTR OUR DEM ONL'"); %>
 <%
    request.setCharacterEncoding("UTF-8");
 %>
@@ -77,7 +78,7 @@
 	<hr width="1200px" style="border:solid 1px #adadad">
 	<table width=1200px height=500px>
 	<tr>
-		<td><h3><b>[<%=rs.getString("head") %>] <%=rs.getString("title") %></b>	</h3></td>
+		<td><h3><b>[<%=rs.getString("head") %>] <%=rs.getString("title") %></b></h3></td>
 	</tr>
 	<tr>
 		<td>
@@ -86,11 +87,13 @@
     </tr>
     <tr>
     	<td align="center">
+        <a class="btn btn-default" href= "boardList.jsp?value=1">목록</a>
         
-       	<a class="btn btn-default" href = "post_modify.jsp?value=<%=rs.getString("num") %>">수정</a>
+        <% if( rs.getString("user").equals(session.getAttribute("sessionID")) )  {%>
         <a class="btn btn-default" href = "post_delete.jsp?value=<%=rs.getString("num") %>">삭제</a>
-        <a class="btn btn-default pull-right" href= "boardList.jsp?value=1">목록</a>
-       
+        <% }
+        	System.out.println(session.getAttribute("sessionID") + " " + rs.getString("user"));%>
+        
         </td>
     </tr>
 </table>
