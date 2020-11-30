@@ -86,6 +86,7 @@ body {
 
 .btn:hover {
   background-position: right;
+  background-color: #7D9CDB;
 }
 
 .bottomText {
@@ -99,7 +100,7 @@ body {
 </script>
 <title>login page</title>
 </head>
- <body width="100%" height="100%" bgcolor="#2B4166">
+ <body width="100%" height="100%" bgcolor="#688EC7">
     <form action="loginCheck.jsp" method="post" class="loginForm">
       <h2>Study With Me</h2>
       <div class="idForm">

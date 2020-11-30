@@ -98,11 +98,11 @@ body {
 }
 .btn {
   position:relative;
-  left:40%;
+  left:20%;
   transform: translateX(-50%);
   margin-top: 30px;
   margin-bottom: 30px;
-  width:80%;
+  width:40%;
   height:40px;
   background: #406AE6;
   background-position: left;
@@ -114,9 +114,13 @@ body {
   transition: 0.4s;
   display:inline;
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 .btn:hover {
   background-position: right;
+  background-color: #7D9CDB;
 }
 
 .bottomText {
@@ -153,7 +157,7 @@ body {
     </script>
 
 </head>
- <body width="100%" height="100%" bgcolor="#2B4166">
+ <body width="100%" height="100%" bgcolor="#688EC7">
  
     <form action="<%= request.getContextPath() %>/joinForm_db.jsp" method="post" class="signUpForm" name="userInfo" onsubmit="return checkValue()" >
       <h2>Sign up to Study With Me</h2>
@@ -175,8 +179,17 @@ body {
       <div class="letterForm">
       	<input type="password" class="pwCheck" name ="pwCheck" placeholder="Confirm Password">
       </div>
+<<<<<<< Updated upstream
       <input type="submit" value ="가입" class="btn" />
       <input type = "button" value = "취소" onclick ="goLoginForm()">
+=======
+      <button type="submit" class="btn">
+        SIGN UP
+      </button>
+ 	 <button type="reset" class="btn">
+        RESET
+     </button>
+>>>>>>> Stashed changes
     </form>
     </body>
     </html>
