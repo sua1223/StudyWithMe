@@ -42,14 +42,17 @@
 			rs=stmt.executeQuery(query);
 			
 			rs.next();
-	   		   	%>
+			
+	  	if( rs.getString("id").equals(session.getAttribute("sessionID"))) { %>
 	   	<span class="image main"><img src=" <%= rs.getString("pic") %>	" alt="" /></span>  	
 		<h3 align="center"><%=rs.getString("text")%> </h3>
 		<b><a href="recentfeed.jsp"  id="feed" class="primary" >MY FEED</a></b> &nbsp;&nbsp;&nbsp;
 		<b><a href ="feed_delete.jsp?value=<%= rs.getInt("num") %>" >삭제</a></b>
-		
-	   	
-	   <%
+		<%} else {%>	
+		<span class="image main"><img src=" <%= rs.getString("pic") %>	" alt="" /></span>  	
+		<h3 align="center"><%=rs.getString("text")%> </h3>
+		<b><a href="othersfeed.jsp" id="feed" class="primary" >Others FEED</a></b> &nbsp;&nbsp;&nbsp;
+		<% }
 	 
 		}catch(ClassNotFoundException e){
 			System.out.println("JDBC 드라이버 로드 에러");
