@@ -17,16 +17,7 @@
 
 <title>Insert title here</title>
 </head>
-<body>
-      <div class="feedButton">
-   <div class="btn_wrap">
-      <span>
-         <a href="makeFeed.jsp" style="color:white">UPLOAD</a>
-         <a href="makeFeed.jsp" style="color:white">UPLOAD</a>
-					
-				</span>
-		  </div>
-		</div>                     
+<body>                   
    <%
 		Connection conn =null;
 		Statement stmt= null;
