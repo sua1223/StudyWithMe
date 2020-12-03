@@ -18,7 +18,7 @@
     }
     table{
         padding: 10px 0px 30px;
-        margin-bottom:200px;
+        margin-bottom:30px;
     }
     tr, td {
         height:55px;
@@ -78,8 +78,9 @@
         <% } %>
     </tr>
 </table>
+	 <iframe src="comment.jsp?value=<%= value %>" width = "1200px" height = "600px" scrolling = "no" frameborder ="0" style="bottom:-30px;"></iframe>
    <iframe src="footer.jsp" width = "1200px" height = "200px" scrolling = "no" frameborder ="0" style="bottom:-30px;"></iframe>
-   </div>
+ </div>
 	 
 </body>
 </html>
