@@ -14,7 +14,15 @@
 **BOARD (BoardList, Search, Comment)**<br>
 모두가 함께 사용하는 공간으로, 학생들 간의 자유로운 소통이 가능 <br>
 
+### 데이터베이스 구조
+![DB](https://user-images.githubusercontent.com/70890638/101184802-7ae7bf80-3694-11eb-9eba-cd79e8ea9074.png)
 
+### 개발환경
+Eclipse Jee<br>
+MYSQL<br>
+Apache Tomcat<br>
 
+### 팀원
+강동연<br>강민성<br>강혜원<br>김민성<br>윤광식<br>장수아
 
 
